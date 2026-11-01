@@ -13,9 +13,15 @@ namespace Aldescu_Sara_Lab2.Models
         [Display(Name = "Last Name")]
         public string? LastName { get; set; }
 
-        // Proprietate calculată opțională pentru afișarea completă a numelui
+
         [Display(Name = "Full Name")]
-        public string FullName => $"{FirstName} {LastName}";
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
 
         public ICollection<Book>? Books { get; set; }
     }
